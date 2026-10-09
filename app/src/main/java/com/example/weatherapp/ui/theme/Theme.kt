@@ -9,24 +9,25 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
     primary = WarmOrange,
-    secondary = White,
+    secondary = sameAsNav,
     tertiary = WarmOrange,
-    background = Black,
+    background = darkModeBackground,
     onBackground = WarmOrange,
-    surface = White,
-    primaryContainer = Black
+    surface = Black,
+    primaryContainer = Black,
+    onSurface = WarmOrange
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = ColdBlue,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
+    secondary = Color.Black,
+    tertiary = Pink40,
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
     onPrimary = Color.White,
@@ -34,8 +35,13 @@ private val LightColorScheme = lightColorScheme(
     onTertiary = Color.White,
     onBackground = Color(0xFF1C1B1F),
     onSurface = Color(0xFF1C1B1F),
-    */
+
 )
+
+val warmGradientColors = listOf(WarmYellow, WarmOrange, WarmRed)
+
+val coldGradientColors = listOf(ColdBlue, ColderBlue, ColdestBlue)
+
 
 @Composable
 fun WeatherAppTheme(
