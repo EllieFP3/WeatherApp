@@ -6,6 +6,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.material.icons.filled.CalendarViewWeek
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -28,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -46,7 +48,7 @@ fun Navigation(){
 
     Scaffold(
         topBar = {
-            TopAppBar(
+            CenterAlignedTopAppBar(
                 colors = topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.secondary,
                     titleContentColor = MaterialTheme.colorScheme.primary,
@@ -54,13 +56,15 @@ fun Navigation(){
                 ),
                 title = {
                     if(selectedIndex == 0){
-                        Text("Current Weather",style = TextStyle
+                        Text("Halifax, Nova Scotia",style = TextStyle
                             (Brush.verticalGradient(colors = warmGradientColors)),
-                            fontSize = 30.sp)
+                            fontSize = 30.sp,
+                            textAlign = TextAlign.Center)
                     } else if (selectedIndex == 1){
-                        Text("Daily Weather", style = TextStyle
+                        Text("Daily Forecast For\nHalifax, Nova Scotia", style = TextStyle
                             (Brush.verticalGradient(colors = coldGradientColors)),
-                            fontSize = 30.sp)
+                            fontSize = 30.sp,
+                            textAlign = TextAlign.Center)
                     }
                 },
 //                actions = {
@@ -84,6 +88,8 @@ fun Navigation(){
         },
         bottomBar = {
             NavigationBar(
+                modifier = Modifier,
+                containerColor = MaterialTheme.colorScheme.secondary,
                 windowInsets = NavigationBarDefaults.windowInsets)
             {
                 NavigationBarItem(
@@ -110,9 +116,9 @@ fun Navigation(){
                     icon = { Icon(imageVector = Icons.Default.CalendarViewWeek, contentDescription = "DailyWeather") },
                     label = { if (selectedIndex == 0) {Text("Current Weather", style = TextStyle
                         (Brush.verticalGradient(colors = warmGradientColors)))
-                    } else if (selectedIndex == 1){Text("Current Weather", style = TextStyle
+                            } else if (selectedIndex == 1){Text("Current Weather", style = TextStyle
                         (Brush.verticalGradient(colors = coldGradientColors)))
-                    }
+                        }
                     },
                     selected = false,
                     onClick = {

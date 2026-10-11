@@ -21,11 +21,18 @@ val WarmOrange = Color(0xFFF1870F)
 
 val Black = Color(0xFF000000)
 
-val White = Color(0x00FFFFFF)
+val White = Color(0xFFFFFFFF)
 
-val sameAsNav = Color(0xFF211F26)
+val NavDark = Color(0xFF211F26)
 
-val darkModeBackground = Color(0xFF424040)
+val CardDark = Color(0xFF211F26)
+val NavLight = Color(0xB7EEE8E8)
+
+val CardLight = Color(0xB7EEE8E8)
+
+val DarkModeBackground = Color(0xFF424040)
+
+val LightModeBackgroundWarm = Color(0xFFF44336)
 
 val WarmYellow = Color(0xFFCDB54C)
 

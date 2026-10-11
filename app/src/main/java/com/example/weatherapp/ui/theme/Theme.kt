@@ -15,27 +15,27 @@ import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
     primary = WarmOrange,
-    secondary = sameAsNav,
-    tertiary = WarmOrange,
-    background = darkModeBackground,
+    secondary = NavDark,
+    tertiary = CardDark,
+    background = DarkModeBackground,
     onBackground = WarmOrange,
     surface = Black,
     primaryContainer = Black,
-    onSurface = WarmOrange
+    onSurface = WarmOrange,
+    onSecondary = ColdBlue,
+    onTertiary = ColdBlue
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = ColdBlue,
-    secondary = Color.Black,
-    tertiary = Pink40,
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-
+    secondary = NavLight,
+    tertiary = CardLight,
+    background = White,
+    surface = White,
+    onBackground = WarmOrange,
+    onSurface = WarmOrange,
+    onSecondary = ColderBlue,
+    onTertiary = ColderBlue
 )
 
 val warmGradientColors = listOf(WarmYellow, WarmOrange, WarmRed)
