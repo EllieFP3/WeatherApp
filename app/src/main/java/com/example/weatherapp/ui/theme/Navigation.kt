@@ -93,7 +93,7 @@ fun Navigation(){
                 windowInsets = NavigationBarDefaults.windowInsets)
             {
                 NavigationBarItem(
-                    icon = { Icon(imageVector = Icons.Default.CalendarToday, contentDescription = "CurrentWeather") },
+                    icon = { Icon(imageVector = Icons.Default.CalendarToday, contentDescription = "Current Weather") },
                     label = { if (selectedIndex == 0) {Text("Current Weather", style = TextStyle
                                 (Brush.verticalGradient(colors = warmGradientColors)))
                             } else if (selectedIndex == 1){Text("Current Weather", style = TextStyle
@@ -113,10 +113,10 @@ fun Navigation(){
                     }
                 )
                 NavigationBarItem(
-                    icon = { Icon(imageVector = Icons.Default.CalendarViewWeek, contentDescription = "DailyWeather") },
-                    label = { if (selectedIndex == 0) {Text("Current Weather", style = TextStyle
+                    icon = { Icon(imageVector = Icons.Default.CalendarViewWeek, contentDescription = "Daily Forecast") },
+                    label = { if (selectedIndex == 0) {Text("Daily Forecast", style = TextStyle
                         (Brush.verticalGradient(colors = warmGradientColors)))
-                            } else if (selectedIndex == 1){Text("Current Weather", style = TextStyle
+                            } else if (selectedIndex == 1){Text("Daily Forecast", style = TextStyle
                         (Brush.verticalGradient(colors = coldGradientColors)))
                         }
                     },
